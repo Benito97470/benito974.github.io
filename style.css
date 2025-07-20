@@ -1,0 +1,101 @@
+/* style.css */
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+/* Typographie & couleurs */
+body {
+  font-family:'Segoe UI',sans-serif;
+  background:#111;
+  color:#f5f1ea;
+  line-height:1.6;
+}
+a { color:#ffae33; text-decoration:none; }
+a:hover { text-decoration:underline; }
+
+/* Header */
+header {
+  background:#200;
+  padding:20px;
+  text-align:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+header h1 {
+  font-size:3rem;
+  letter-spacing:4px;
+  text-shadow:2px 2px 4px #000;
+}
+nav {
+  margin-top:15px;
+}
+nav a {
+  color:#f5f1ea;
+  padding:8px 16px;
+  margin:0 5px;
+  border:1px solid #f5f1ea;
+  border-radius:20px;
+  transition:0.3s;
+}
+nav a:hover,
+nav a.active {
+  background:#f5f1ea;
+  color:#200;
+}
+
+/* Main content */
+main {
+  max-width:1200px;
+  margin:40px auto;
+  padding:0 20px;
+}
+section {
+  padding:60px 0;
+  border-bottom:1px solid #333;
+}
+section:last-child {
+  border:none;
+}
+section h2 {
+  font-size:2.5rem;
+  margin-bottom:20px;
+  border-bottom:4px solid #ffae33;
+  display:inline-block;
+  padding-bottom:8px;
+}
+p, ul {
+  margin-bottom:20px;
+  font-size:1.1rem;
+}
+ul {
+  list-style:disc inside;
+}
+li {
+  margin-bottom:12px;
+}
+
+/* Footer */
+footer {
+  text-align:center;
+  padding:30px 0;
+  border-top:1px solid #333;
+  font-size:0.9rem;
+  color:#aaa;
+}
+
+/* Responsive */
+@media(max-width:768px) {
+  header h1 {
+    font-size:2.2rem;
+  }
+  nav a {
+    display:block;
+    margin:5px auto;
+    width:90%;
+    max-width:200px;
+    text-align:center;
+  }
+  main {
+    margin:20px auto;
+  }
+}
