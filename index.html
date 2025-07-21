@@ -1,29 +1,65 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Accueil – Zozobra Réunion</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Accueil – Zozobra Réunion</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Zozobra Réunion</h1>
-    <nav>
-      <a href="index.html" class="active">Accueil</a>
-      <a href="apropos.html">À propos</a>
-      <a href="programme.html">Programme</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+<header>
+  <h1>Zozobra Réunion</h1>
+  <nav>
+    <a href="index.html" class="active">Accueil</a>
+    <a href="apropos.html">À propos</a>
+    <a href="programme.html">Programme</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-  <main>
-    <section>
-      <h2>Bienvenue</h2>
-      <p>Zozobra Réunion by Benito.974 réinvente le rite ancestral de purification par le feu. Une immersion créative et communautaire autour de la crémation de Zozobra, symbole de renouveau.</p>
-    </section>
-  </main>
+<main>
+  <section>
+    <h2>Bienvenue</h2>
+    <p>Zozobra Réunion by Benito.974 réinvente le rite ancestral de purification par le feu. Une immersion créative autour de la symbolique de renouveau.</p>
+  </section>
 
-  <footer>© 2025 Benito.974 — Zozobra Réunion</footer>
+  <!-- 🔥 Compte à rebours -->
+  <section id="countdown">
+    <h2>Réouverture de Zozobra Réunion dans :</h2>
+    <div class="timer">
+      <span id="days">00</span>j :
+      <span id="hours">00</span>h :
+      <span id="minutes">00</span>m :
+      <span id="seconds">00</span>s
+    </div>
+  </section>
+</main>
+
+<footer>© 2025 Benito.974 — Zozobra Réunion</footer>
+
+<script>
+// Définition de la date cible
+const target = new Date("Dec 30, 2025 00:00:00").getTime();
+
+const interval = setInterval(() => {
+  const now = Date.now();
+  const diff = target - now;
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+  document.getElementById("days").textContent = String(days).padStart(2, '0');
+  document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+  document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+  document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+
+  if (diff < 0) {
+    clearInterval(interval);
+    document.getElementById("countdown").innerHTML = "<h2>Réouverture : C'est parti ! 🎉</h2>";
+  }
+}, 1000);
+</script>
 </body>
 </html>
